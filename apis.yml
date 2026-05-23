@@ -20,9 +20,42 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/national-hockey-league/refs/heads/main/apis.yml
 created: '2026-05-05'
-modified: '2026-05-16'
-specificationVersion: '0.19'
-apis: []
+modified: '2026-05-23'
+specificationVersion: '0.20'
+apis:
+  - aid: national-hockey-league:nhl-web-api
+    name: NHL Web API
+    description: >-
+      Public but undocumented JSON API that powers NHL.com and the league's
+      first-party web and mobile apps. Surfaces schedules, scores, play-by-play,
+      standings, teams, players, draft, prospects, season standings, and
+      franchise records. Widely consumed by the hockey-analytics and fan-tools
+      community even though the NHL does not publish formal documentation or
+      a rate-limit policy.
+    humanURL: https://api-web.nhle.com/
+    baseURL: https://api-web.nhle.com/
+    tags:
+      - Sports
+      - Hockey
+      - Stats
+      - Scores
+      - Schedule
+  - aid: national-hockey-league:nhl-stats-api
+    name: NHL Stats API (Legacy)
+    description: >-
+      Legacy statistics endpoint at api.nhle.com (and the older
+      statsapi.web.nhl.com) used by community projects and analytics tools.
+      Hosts deeper historical records, play-by-play, and shift data. Like the
+      web API, this surface is undocumented and consumed via reverse-engineered
+      conventions.
+    humanURL: https://api.nhle.com/
+    baseURL: https://api.nhle.com/
+    tags:
+      - Sports
+      - Hockey
+      - Stats
+      - Historical Data
+      - Play-by-Play
 common:
   - type: LinkedIn
     url: https://www.linkedin.com/company/national-hockey-league
