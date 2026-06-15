@@ -1,0 +1,322 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHL Web API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Schedule",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current weekly schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/schedule/now"
+          },
+          "docs": "Returns the schedule for the current week."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Scores",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current daily scores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/score/now"
+          },
+          "docs": "Returns scores for the current date."
+        },
+        {
+          "info": {
+            "name": "Scores for a date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/score/:date",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "path",
+                "description": "Date in YYYY-MM-DD format."
+              }
+            ]
+          },
+          "docs": "Returns scores for a given date."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Standings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current standings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/standings/now"
+          },
+          "docs": "Returns current league standings."
+        },
+        {
+          "info": {
+            "name": "Standings on a date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/standings/:date",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Standings on a date"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Teams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current team roster",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/roster/:team/current",
+            "params": [
+              {
+                "name": "team",
+                "value": "",
+                "type": "path",
+                "description": "Team tri-code (e.g. TOR, BOS)."
+              }
+            ]
+          },
+          "docs": "Current team roster"
+        },
+        {
+          "info": {
+            "name": "Team roster for a season",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/roster/:team/:season",
+            "params": [
+              {
+                "name": "team",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "season",
+                "value": "",
+                "type": "path",
+                "description": "Season identifier in YYYYYYYY format (e.g. 20232024)."
+              }
+            ]
+          },
+          "docs": "Team roster for a season"
+        },
+        {
+          "info": {
+            "name": "Current club statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/club-stats/:team/now",
+            "params": [
+              {
+                "name": "team",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Current club statistics"
+        },
+        {
+          "info": {
+            "name": "Current season schedule for a team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/club-schedule-season/:team/now",
+            "params": [
+              {
+                "name": "team",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Current season schedule for a team"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Players",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Player landing details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/player/:player/landing",
+            "params": [
+              {
+                "name": "player",
+                "value": "",
+                "type": "path",
+                "description": "Player ID."
+              }
+            ]
+          },
+          "docs": "Player landing details"
+        },
+        {
+          "info": {
+            "name": "Player game log",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/player/:player/game-log/:season/:game-type",
+            "params": [
+              {
+                "name": "player",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "season",
+                "value": "",
+                "type": "path",
+                "description": "Season identifier in YYYYYYYY format."
+              },
+              {
+                "name": "game-type",
+                "value": "",
+                "type": "path",
+                "description": "Game type (2 regular season, 3 playoffs)."
+              }
+            ]
+          },
+          "docs": "Player game log"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current skater stats leaders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/skater-stats-leaders/current"
+          },
+          "docs": "Current skater stats leaders"
+        },
+        {
+          "info": {
+            "name": "Current goalie stats leaders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/goalie-stats-leaders/current"
+          },
+          "docs": "Current goalie stats leaders"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Game Center",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Game boxscore",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/gamecenter/:game-id/boxscore",
+            "params": [
+              {
+                "name": "game-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Game boxscore"
+        },
+        {
+          "info": {
+            "name": "Game play-by-play",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/gamecenter/:game-id/play-by-play",
+            "params": [
+              {
+                "name": "game-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Game play-by-play"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
