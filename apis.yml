@@ -57,6 +57,8 @@ apis:
       - Historical Data
       - Play-by-Play
 common:
+  - type: DomainSecurity
+    url: security/national-hockey-league-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/national-hockey-league
   - type: Website
