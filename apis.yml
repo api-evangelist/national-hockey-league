@@ -57,6 +57,8 @@ apis:
       - Historical Data
       - Play-by-Play
 common:
+  - type: AgenticAccess
+    url: agentic-access/national-hockey-league-agentic-access.yml
   - type: DomainSecurity
     url: security/national-hockey-league-domain-security.yml
   - type: LinkedIn
