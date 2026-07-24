@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: NHL Web Game Center API
+  description: Unofficial OpenAPI description of the NHL Web API hosted at api-web.nhle.com. This API exposes public read-only endpoints for schedule, scores, standings, rosters, club statistics, player game logs, and game center (boxscore and play-by-play) data. No authentication is required for the documented endpoints; usage should respect NHL terms of service.
+  version: 1.0.0
+  contact:
+    name: API Evangelist
+    email: kin@apievangelist.com
+servers:
+- url: https://api-web.nhle.com
+  description: NHL Web API
+tags:
+- name: Game Center
+paths:
+  /v1/gamecenter/{game-id}/boxscore:
+    get:
+      summary: Game boxscore
+      operationId: getBoxscore
+      tags:
+      - Game Center
+      parameters:
+      - name: game-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/gamecenter/{game-id}/play-by-play:
+    get:
+      summary: Game play-by-play
+      operationId: getPlayByPlay
+      tags:
+      - Game Center
+      parameters:
+      - name: game-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
