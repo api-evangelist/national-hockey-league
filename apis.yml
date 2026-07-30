@@ -11,7 +11,18 @@ description: >-
   Commercial data feeds are licensed through SMT, Sportradar, and other
   approved partners.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/national-hockey-league.png
 tags:
   - Sports
   - Hockey
@@ -23,39 +34,105 @@ created: '2026-05-05'
 modified: '2026-05-23'
 specificationVersion: '0.20'
 apis:
-  - aid: national-hockey-league:nhl-web-api
-    name: NHL Web API
-    description: >-
-      Public but undocumented JSON API that powers NHL.com and the league's
-      first-party web and mobile apps. Surfaces schedules, scores, play-by-play,
-      standings, teams, players, draft, prospects, season standings, and
-      franchise records. Widely consumed by the hockey-analytics and fan-tools
-      community even though the NHL does not publish formal documentation or
-      a rate-limit policy.
-    humanURL: https://api-web.nhle.com/
-    baseURL: https://api-web.nhle.com/
-    tags:
-      - Sports
-      - Hockey
-      - Stats
-      - Scores
-      - Schedule
-  - aid: national-hockey-league:nhl-stats-api
-    name: NHL Stats API (Legacy)
-    description: >-
-      Legacy statistics endpoint at api.nhle.com (and the older
-      statsapi.web.nhl.com) used by community projects and analytics tools.
-      Hosts deeper historical records, play-by-play, and shift data. Like the
-      web API, this surface is undocumented and consumed via reverse-engineered
-      conventions.
-    humanURL: https://api.nhle.com/
-    baseURL: https://api.nhle.com/
-    tags:
-      - Sports
-      - Hockey
-      - Stats
-      - Historical Data
-      - Play-by-Play
+- aid: national-hockey-league:nhl-web-api
+  name: NHL Web API
+  description: >-
+    Public but undocumented JSON API that powers NHL.com and the league's first-party web and mobile apps.
+    Surfaces schedules, scores, play-by-play, standings, teams, players, draft, prospects, season standings,
+    and franchise records. Widely consumed by the hockey-analytics and fan-tools community even though
+    the NHL does not publish formal documentation or a rate-limit policy.
+  humanURL: https://api-web.nhle.com/
+  baseURL: https://api-web.nhle.com/
+  tags:
+  - Sports
+  - Hockey
+  - Stats
+  - Scores
+  - Schedule
+- aid: national-hockey-league:nhl-stats-api
+  name: NHL Stats API (Legacy)
+  description: >-
+    Legacy statistics endpoint at api.nhle.com (and the older statsapi.web.nhl.com) used by community
+    projects and analytics tools. Hosts deeper historical records, play-by-play, and shift data. Like
+    the web API, this surface is undocumented and consumed via reverse-engineered conventions.
+  humanURL: https://api.nhle.com/
+  baseURL: https://api.nhle.com/
+  tags:
+  - Sports
+  - Hockey
+  - Stats
+  - Historical Data
+  - Play-by-Play
+- aid: national-hockey-league:national-hockey-league-game-center-api
+  name: National Hockey League Game Center API
+  description: The Game Center API from National Hockey League — 2 operation(s) for game center.
+  humanURL: https://api-web.nhle.com/
+  baseURL: https://api-web.nhle.com/
+  tags:
+  - Game Center
+  properties:
+  - type: OpenAPI
+    url: openapi/national-hockey-league-game-center-api-openapi.yml
+- aid: national-hockey-league:national-hockey-league-players-api
+  name: National Hockey League Players API
+  description: The Players API from National Hockey League — 2 operation(s) for players.
+  humanURL: https://api-web.nhle.com/
+  baseURL: https://api-web.nhle.com/
+  tags:
+  - Players
+  properties:
+  - type: OpenAPI
+    url: openapi/national-hockey-league-players-api-openapi.yml
+- aid: national-hockey-league:national-hockey-league-schedule-api
+  name: National Hockey League Schedule API
+  description: The Schedule API from National Hockey League — 1 operation(s) for schedule.
+  humanURL: https://api-web.nhle.com/
+  baseURL: https://api-web.nhle.com/
+  tags:
+  - Schedule
+  properties:
+  - type: OpenAPI
+    url: openapi/national-hockey-league-schedule-api-openapi.yml
+- aid: national-hockey-league:national-hockey-league-scores-api
+  name: National Hockey League Scores API
+  description: The Scores API from National Hockey League — 2 operation(s) for scores.
+  humanURL: https://api-web.nhle.com/
+  baseURL: https://api-web.nhle.com/
+  tags:
+  - Scores
+  properties:
+  - type: OpenAPI
+    url: openapi/national-hockey-league-scores-api-openapi.yml
+- aid: national-hockey-league:national-hockey-league-standings-api
+  name: National Hockey League Standings API
+  description: The Standings API from National Hockey League — 2 operation(s) for standings.
+  humanURL: https://api-web.nhle.com/
+  baseURL: https://api-web.nhle.com/
+  tags:
+  - Standings
+  properties:
+  - type: OpenAPI
+    url: openapi/national-hockey-league-standings-api-openapi.yml
+- aid: national-hockey-league:national-hockey-league-stats-api
+  name: National Hockey League Stats API
+  description: The Stats API from National Hockey League — 2 operation(s) for stats.
+  humanURL: https://api-web.nhle.com/
+  baseURL: https://api-web.nhle.com/
+  tags:
+  - Stats
+  properties:
+  - type: OpenAPI
+    url: openapi/national-hockey-league-stats-api-openapi.yml
+- aid: national-hockey-league:national-hockey-league-teams-api
+  name: National Hockey League Teams API
+  description: The Teams API from National Hockey League — 4 operation(s) for teams.
+  humanURL: https://api-web.nhle.com/
+  baseURL: https://api-web.nhle.com/
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/national-hockey-league-teams-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/national-hockey-league-agentic-access.yml
