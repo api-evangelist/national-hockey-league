@@ -1,0 +1,302 @@
+openapi: 3.1.0
+info:
+  title: NHL Web API
+  description: >-
+    Unofficial OpenAPI description of the NHL Web API hosted at api-web.nhle.com.
+    This API exposes public read-only endpoints for schedule, scores, standings,
+    rosters, club statistics, player game logs, and game center (boxscore and
+    play-by-play) data. No authentication is required for the documented
+    endpoints; usage should respect NHL terms of service.
+  version: "1.0.0"
+  contact:
+    name: API Evangelist
+    email: kin@apievangelist.com
+servers:
+  - url: https://api-web.nhle.com
+    description: NHL Web API
+paths:
+  /v1/schedule/now:
+    get:
+      summary: Current weekly schedule
+      description: Returns the schedule for the current week.
+      operationId: getScheduleNow
+      tags:
+        - Schedule
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/score/now:
+    get:
+      summary: Current daily scores
+      description: Returns scores for the current date.
+      operationId: getScoreNow
+      tags:
+        - Scores
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/score/{date}:
+    get:
+      summary: Scores for a date
+      description: Returns scores for a given date.
+      operationId: getScoreByDate
+      tags:
+        - Scores
+      parameters:
+        - name: date
+          in: path
+          required: true
+          description: Date in YYYY-MM-DD format.
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/standings/now:
+    get:
+      summary: Current standings
+      description: Returns current league standings.
+      operationId: getStandingsNow
+      tags:
+        - Standings
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/standings/{date}:
+    get:
+      summary: Standings on a date
+      operationId: getStandingsByDate
+      tags:
+        - Standings
+      parameters:
+        - name: date
+          in: path
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/roster/{team}/current:
+    get:
+      summary: Current team roster
+      operationId: getRosterCurrent
+      tags:
+        - Teams
+      parameters:
+        - name: team
+          in: path
+          required: true
+          description: Team tri-code (e.g. TOR, BOS).
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/roster/{team}/{season}:
+    get:
+      summary: Team roster for a season
+      operationId: getRosterBySeason
+      tags:
+        - Teams
+      parameters:
+        - name: team
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: season
+          in: path
+          required: true
+          description: Season identifier in YYYYYYYY format (e.g. 20232024).
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/club-stats/{team}/now:
+    get:
+      summary: Current club statistics
+      operationId: getClubStatsNow
+      tags:
+        - Teams
+      parameters:
+        - name: team
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/club-schedule-season/{team}/now:
+    get:
+      summary: Current season schedule for a team
+      operationId: getClubScheduleSeasonNow
+      tags:
+        - Teams
+      parameters:
+        - name: team
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/player/{player}/landing:
+    get:
+      summary: Player landing details
+      operationId: getPlayerLanding
+      tags:
+        - Players
+      parameters:
+        - name: player
+          in: path
+          required: true
+          description: Player ID.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/player/{player}/game-log/{season}/{game-type}:
+    get:
+      summary: Player game log
+      operationId: getPlayerGameLog
+      tags:
+        - Players
+      parameters:
+        - name: player
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: season
+          in: path
+          required: true
+          description: Season identifier in YYYYYYYY format.
+          schema:
+            type: string
+        - name: game-type
+          in: path
+          required: true
+          description: Game type (2 regular season, 3 playoffs).
+          schema:
+            type: integer
+            enum: [2, 3]
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/skater-stats-leaders/current:
+    get:
+      summary: Current skater stats leaders
+      operationId: getSkaterStatsLeadersCurrent
+      tags:
+        - Stats
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/goalie-stats-leaders/current:
+    get:
+      summary: Current goalie stats leaders
+      operationId: getGoalieStatsLeadersCurrent
+      tags:
+        - Stats
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/gamecenter/{game-id}/boxscore:
+    get:
+      summary: Game boxscore
+      operationId: getBoxscore
+      tags:
+        - Game Center
+      parameters:
+        - name: game-id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/gamecenter/{game-id}/play-by-play:
+    get:
+      summary: Game play-by-play
+      operationId: getPlayByPlay
+      tags:
+        - Game Center
+      parameters:
+        - name: game-id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes: {}

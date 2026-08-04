@@ -1,0 +1,26 @@
+{
+  "provider": "national-hockey-league",
+  "sources": [
+    "national-hockey-league-game-center-api-openapi.yml",
+    "national-hockey-league-players-api-openapi.yml",
+    "national-hockey-league-schedule-api-openapi.yml",
+    "national-hockey-league-scores-api-openapi.yml",
+    "national-hockey-league-standings-api-openapi.yml",
+    "national-hockey-league-stats-api-openapi.yml",
+    "national-hockey-league-teams-api-openapi.yml"
+  ],
+  "outputs": [
+    "national-hockey-league-game-center-api-openapi.yml",
+    "national-hockey-league-players-api-openapi.yml",
+    "national-hockey-league-schedule-api-openapi.yml",
+    "national-hockey-league-scores-api-openapi.yml",
+    "national-hockey-league-standings-api-openapi.yml",
+    "national-hockey-league-stats-api-openapi.yml",
+    "national-hockey-league-teams-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
