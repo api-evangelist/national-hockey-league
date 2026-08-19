@@ -32,7 +32,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/national-hockey-league/refs/heads/main/apis.yml
 created: '2026-05-05'
 modified: '2026-05-23'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: national-hockey-league:nhl-web-api
   name: NHL Web API
