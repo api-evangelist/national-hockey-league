@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "78716ec2-e00d-4423-afe4-5977efd42b18",
+      "name": "Stats",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "78afbd41-0eb7-4816-95f7-b4f7a742e18c",
+          "name": "Current skater stats leaders",
+          "request": {
+            "name": "Current skater stats leaders",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "skater-stats-leaders",
+                "current"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10c39b33-3cbd-404c-9da5-d637c84c7ea0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "skater-stats-leaders",
+                    "current"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dee58048-6f1a-452f-94e7-d6fc9d27da56",
+          "name": "Current goalie stats leaders",
+          "request": {
+            "name": "Current goalie stats leaders",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "goalie-stats-leaders",
+                "current"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f884b2e-a791-4474-9503-51edf7038e88",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "goalie-stats-leaders",
+                    "current"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-web.nhle.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "13a10b6f-5cc9-40b9-a8af-ed2221046f7a",
+    "name": "NHL Web Game Center Stats API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Unofficial OpenAPI description of the NHL Web API hosted at api-web.nhle.com. This API exposes public read-only endpoints for schedule, scores, standings, rosters, club statistics, player game logs, and game center (boxscore and play-by-play) data. No authentication is required for the documented endpoints; usage should respect NHL terms of service.\n\nContact Support:\n Name: API Evangelist\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

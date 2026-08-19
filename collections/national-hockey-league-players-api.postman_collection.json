@@ -1,0 +1,242 @@
+{
+  "item": [
+    {
+      "id": "18cf08c4-61ee-48e9-a36e-9dd0f9feb873",
+      "name": "Players",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3f88078e-b961-44a3-92ce-ad1397961b2f",
+          "name": "Player landing details",
+          "request": {
+            "name": "Player landing details",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "player",
+                ":player",
+                "landing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "player",
+                  "description": "(Required) Player ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a64fa2d7-f50f-4a99-9e7b-014fac3786a7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "player",
+                    ":player",
+                    "landing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "player",
+                      "description": "(Required) Player ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03977142-f56a-4a5b-9274-c0c1d7efdf38",
+          "name": "Player game log",
+          "request": {
+            "name": "Player game log",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "player",
+                ":player",
+                "game-log",
+                ":season",
+                ":game-type"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "player",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "season",
+                  "description": "(Required) Season identifier in YYYYYYYY format."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "game-type",
+                  "description": "(Required) Game type (2 regular season, 3 playoffs)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d7591376-c8bf-4f54-a168-8aece0232e30",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "player",
+                    ":player",
+                    "game-log",
+                    ":season",
+                    ":game-type"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "player",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "season",
+                      "description": "(Required) Season identifier in YYYYYYYY format."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "game-type",
+                      "description": "(Required) Game type (2 regular season, 3 playoffs)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-web.nhle.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b128114d-30a9-488c-8347-043896581718",
+    "name": "NHL Web Game Center Players API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Unofficial OpenAPI description of the NHL Web API hosted at api-web.nhle.com. This API exposes public read-only endpoints for schedule, scores, standings, rosters, club statistics, player game logs, and game center (boxscore and play-by-play) data. No authentication is required for the documented endpoints; usage should respect NHL terms of service.\n\nContact Support:\n Name: API Evangelist\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

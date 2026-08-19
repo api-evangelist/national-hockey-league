@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHL Web Game Center Scores API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Scores",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current daily scores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/score/now"
+          },
+          "docs": "Returns scores for the current date."
+        },
+        {
+          "info": {
+            "name": "Scores for a date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/score/:date",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "path",
+                "description": "Date in YYYY-MM-DD format."
+              }
+            ]
+          },
+          "docs": "Returns scores for a given date."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

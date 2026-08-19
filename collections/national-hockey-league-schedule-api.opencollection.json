@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHL Web Game Center Schedule API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Schedule",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current weekly schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/schedule/now"
+          },
+          "docs": "Returns the schedule for the current week."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

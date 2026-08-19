@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHL Web Game Center Standings API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Standings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current standings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/standings/now"
+          },
+          "docs": "Returns current league standings."
+        },
+        {
+          "info": {
+            "name": "Standings on a date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/standings/:date",
+            "params": [
+              {
+                "name": "date",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Standings on a date"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

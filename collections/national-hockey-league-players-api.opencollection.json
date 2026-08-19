@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHL Web Game Center Players API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Players",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Player landing details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/player/:player/landing",
+            "params": [
+              {
+                "name": "player",
+                "value": "",
+                "type": "path",
+                "description": "Player ID."
+              }
+            ]
+          },
+          "docs": "Player landing details"
+        },
+        {
+          "info": {
+            "name": "Player game log",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/player/:player/game-log/:season/:game-type",
+            "params": [
+              {
+                "name": "player",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "season",
+                "value": "",
+                "type": "path",
+                "description": "Season identifier in YYYYYYYY format."
+              },
+              {
+                "name": "game-type",
+                "value": "",
+                "type": "path",
+                "description": "Game type (2 regular season, 3 playoffs)."
+              }
+            ]
+          },
+          "docs": "Player game log"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

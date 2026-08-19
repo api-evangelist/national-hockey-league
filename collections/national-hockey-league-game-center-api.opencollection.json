@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHL Web Game Center API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Game Center",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Game boxscore",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/gamecenter/:game-id/boxscore",
+            "params": [
+              {
+                "name": "game-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Game boxscore"
+        },
+        {
+          "info": {
+            "name": "Game play-by-play",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/gamecenter/:game-id/play-by-play",
+            "params": [
+              {
+                "name": "game-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Game play-by-play"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

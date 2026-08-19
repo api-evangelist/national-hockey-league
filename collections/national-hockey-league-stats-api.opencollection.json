@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NHL Web Game Center Stats API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Current skater stats leaders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/skater-stats-leaders/current"
+          },
+          "docs": "Current skater stats leaders"
+        },
+        {
+          "info": {
+            "name": "Current goalie stats leaders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-web.nhle.com/v1/goalie-stats-leaders/current"
+          },
+          "docs": "Current goalie stats leaders"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
