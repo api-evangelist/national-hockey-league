@@ -129,6 +129,8 @@ apis:
   humanURL: https://api-web.nhle.com/
   baseURL: https://api-web.nhle.com/
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
