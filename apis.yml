@@ -90,6 +90,8 @@ apis:
   humanURL: https://api-web.nhle.com/
   baseURL: https://api-web.nhle.com/
   tags:
+  - Player
+  tags_raw:
   - Players
   properties:
   - type: OpenAPI
