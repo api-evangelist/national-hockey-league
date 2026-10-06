@@ -42,7 +42,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/national-hockey-league/refs/heads/main/apis.yml
 created: '2026-05-05'
-modified: '2026-05-23'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: national-hockey-league:nhl-web-api
@@ -149,6 +149,8 @@ apis:
   - type: OpenAPI
     url: openapi/national-hockey-league-teams-api-openapi.yml
 common:
+  - url: https://www.nhl.com/news/
+    type: Blog
   - type: AgenticAccess
     url: agentic-access/national-hockey-league-agentic-access.yml
   - type: DomainSecurity
